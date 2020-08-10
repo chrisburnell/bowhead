@@ -9,7 +9,3 @@
 @import "src/maps";
 @import "src/mixins";
 @import "src/generator";
-
-body {
-    @include v(color, plankton);
-}
