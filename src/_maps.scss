@@ -1,0 +1,149 @@
+////
+/// Maps
+////
+
+/// @type Map
+/// @prop {String} key - Measure name
+/// @prop {Length} value - Measure value
+$measures: (
+    tiny: 0.125rem,
+    small: 0.5rem,
+    medium: 1rem,
+    large: 2.25rem,
+    gigantic: 4rem
+) !default;
+
+/// @type Map
+/// @prop {String} key - Opacity name
+/// @prop {Number} value - Opacity value
+$opacities: (
+    alpha: 0.8,
+    beta: 0.5,
+    gamma: 0.2
+) !default;
+
+/// @type Map
+/// @prop {String} key - Color Name
+/// @prop {Color} value - Color Value
+$colors: (
+    transparent: rgba(0,0,0,0),
+    brick: firebrick,
+    plankton: mediumseagreen,
+    desert: tan
+) !default;
+
+/// @type Map
+/// @prop {String} key - Border Width Name
+/// @prop {Color} value - Border Width Value
+$border-widths: (
+    default: 4px,
+    thin: 2px,
+    hairline: 1px
+) !default;
+
+/// @type Map
+/// @prop {String} key - Border Style Name
+/// @prop {Color} value - Border Style Value
+$border-styles: (
+    default: "solid",
+    alternate: "dashed"
+) !default;
+
+/// @type Map
+/// @prop {String} key - Border Radius Name
+/// @prop {Color} value - Border Radius Value
+$border-radii: (
+    default: 10px,
+    hairline: 1px
+) !default;
+
+
+/// @type Map
+/// @prop {String} key - Font Family name
+/// @prop {Number} value - Font Family Value
+$font-families: (
+    default: "sans-serif",
+    serif: "serif",
+    monospace: "monospace"
+) !default;
+
+
+/// @type Map
+/// @prop {String} key - Font Weight Name
+/// @prop {Color} value - Font Weight Value
+$font-weights: (
+    default: 400,
+    bold: 600
+) !default;
+
+/// @type Map
+/// @prop {String} key - Line Height Name
+/// @prop {Number} value - Line Height Value
+$line-heights: (
+    default: 1.5,
+    small: 1,
+    large: 2
+) !default;
+
+/// @type Map
+/// @prop {String} key - Transition Duration Name
+/// @prop {Number} value - Transition Duration Value
+$transition-durations: (
+    default: 0.2s,
+    long: 1s
+) !default;
+
+/// @type Map
+/// @prop {String} key - Transition Function Name
+/// @prop {Number} value - Transition Function Value
+$transition-functions: (
+    default: "ease",
+    alternate: "ease-in-out"
+) !default;
+
+/// @type Map
+/// @prop {String} key - z-index Name
+/// @prop {Number} value - z-index Value
+$z-indexes: (
+    below: -1,
+    root: 0,
+    default: 1,
+    above: 2
+) !default;
+
+/// @type Map
+/// @prop {Array} key - Aspect Ratio
+/// @prop {Length} value - Percentage for sizing
+$aspect-ratios: (
+    "16-by-9": 56.25%,
+    "4-by-3": 75%
+) !default;
+
+
+/// @type Map
+$variable-map: (
+    color: $colors,
+    measure: $measures,
+    opacity: $opacities,
+    z-index: $z-indexes
+) !default;
+
+/// @type Map
+$property-map: (
+    width: measure,
+    min-width: measure,
+    max-width: measure,
+    height: measure,
+    min-height: measure,
+    max-height: measure,
+    padding: measure,
+    margin: measure,
+    background-color: color,
+    color: color,
+    border-color: color,
+    outline-color: color,
+    fill: color,
+    stroke: color,
+    opacity: opacity,
+    z-index: z-index
+) !default;

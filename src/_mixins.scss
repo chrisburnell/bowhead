@@ -1,0 +1,31 @@
+////
+/// Mixins
+////
+
+///
+/// Output a property, CSS Variable, and, optionally, SCSS value
+///
+/// @author Chris Burnell
+///
+/// @param {String} $property - key from $property-map or $variable-map
+/// @param {String} $value [default] - key from inner map
+/// @param {Boolean} $showFallback [false] - if the SCSS value should be shown
+///
+/// @example scss
+///   @include v(padding, small);
+///   // padding: var(--measure-small);
+/// @example scss
+///   @include v(padding, small, true);
+///   // padding: 0.625rem;
+///   // padding: var(--measure-small);
+///
+/// @return Associated property and CSS Variable or SCSS value
+///
+@mixin v($property, $value: default, $showFallback: true) {
+    // leverage the v() function and output the CSS Variable(s) and optionally
+    // the respective SCSS value(s) as well as the property
+    @if $showFallback {
+        #{$property}: v($property, $value, true);
+    }
+    #{$property}: v($property, $value);
+}
