@@ -1,0 +1,27 @@
+$measures: (
+    tiny: 0.125rem,
+    small:  0.5rem,
+    medium:   1rem,
+    large: 2.25rem,
+    gigantic: 4rem
+) !default;
+
+$opacities: (
+    alpha: 0.8,
+    beta:  0.5,
+    gamma: 0.2
+) !default;
+
+$colors: (
+    transparent: rgba(0, 0, 0, 0),
+    brick:       firebrick,
+    plankton:    mediumseagreen,
+    desert:      tan
+) !default;
+
+$z-indexes: (
+    below:  -1,
+    root:    0,
+    default: 1,
+    above:   2
+) !default;
