@@ -1,3 +1,7 @@
+// Decides whether or not to show a non-CSS Variable fallback value.
+$show-fallback: true;
+
+
 $measures: (
     tiny: 0.125rem,
     small:  0.5rem,
@@ -14,9 +18,9 @@ $opacities: (
 
 $colors: (
     transparent: rgba(0, 0, 0, 0),
-    brick:       firebrick,
-    plankton:    mediumseagreen,
-    desert:      tan
+    brick:       #b22222,
+    plankton:    #3cb371,
+    desert:      #d2b48c
 ) !default;
 
 $z-indexes: (

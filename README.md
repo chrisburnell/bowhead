@@ -2,7 +2,9 @@
 
 ## A small framework on which to build your design tokens in SCSS.
 
-You’ll want to jump into `src/_config.scss` and make some changes, add your own tokens, etc.
+I wrote more about this here: [https://chrisburnell.com/bowhead](https://chrisburnell.com/bowhead/).
+
+You’ll want to jump into `src/_config.scss` and make some changes: add your own tokens, etc.
 
 ```scss
 body {
@@ -23,5 +25,6 @@ body {
   border: var(--measure-tiny) solid var(--color-plankton);
   padding: var(--measure-medium) var(--measure-gigantic);
   z-index: 2;
+  z-index: var(--z-index-above);
 }
 ```

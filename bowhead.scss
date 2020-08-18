@@ -10,3 +10,7 @@
 @import "src/maps";
 @import "src/mixins";
 @import "src/generator";
+
+.page {
+    @include v(background-color, desert);
+}

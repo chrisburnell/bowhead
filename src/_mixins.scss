@@ -21,7 +21,7 @@
 ///
 /// @return Associated property and CSS Variable or SCSS value
 ///
-@mixin v($property, $value: default, $showFallback: true) {
+@mixin v($property, $value: default, $showFallback: $show-fallback) {
     // leverage the v() function and output the CSS Variable(s) and optionally
     // the respective SCSS value(s) as well as the property
     @if $showFallback {
