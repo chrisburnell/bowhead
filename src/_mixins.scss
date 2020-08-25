@@ -1,7 +1,3 @@
-////
-/// Mixins
-////
-
 ///
 /// Output a property, CSS Variable, and, optionally, SCSS value
 ///
@@ -29,29 +25,3 @@
     }
     #{$property}: v($property, $value);
 }
-
-
-///
-/// Output properties and values for all defined themes
-///
-// @mixin t($properties...) {
-//     @each $theme, $data in $themes {
-//         @if $theme == "light" {
-//             @each $property in $properties {
-//                 @if map-has-key($data, $property) {
-//                     $property-clean: nth(str-split($property, "--"), 1); // first item in the array
-//                     @include v($property-clean, map-get($data, $property));
-//                 }
-//             }
-//         } @else {
-//             .theme--#{$theme} & {
-//                 @each $property in $properties {
-//                     @if map-has-key($data, $property) {
-//                         $property-clean: nth(str-split($property, "--"), 1); // first item in the array
-//                         @include v($property-clean, map-get($data, $property));
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

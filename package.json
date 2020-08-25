@@ -1,7 +1,7 @@
 {
   "name": "@chrisburnell/bowhead",
-  "version": "0.1.0",
-  "description": "A small framework on which to build your design tokens in SCSS.",
+  "version": "0.1.1",
+  "description": "Memorable and maintainable design tokens in SCSS",
   "main": "bowhead.scss",
   "scripts": {
     "test": "npx sass bowhead.scss bowhead.css --no-source-map"
