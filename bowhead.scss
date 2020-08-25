@@ -10,8 +10,3 @@
 @import "src/maps";
 @import "src/mixins";
 @import "src/generator";
-
-body {
-    @include v(padding, medium);
-    margin: v(measure, small) v(measure, large, true);
-}
