@@ -17,21 +17,16 @@ This has a positive effect that ranges from giving the colours in your design sy
 - **With npm:** `npm install @chrisburnell/bowhead`
 - **Direct download:** [https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)
 
-Then you’ll have to include it in your SCSS somehow. You could use Webpack or if you’re using *npm* something like this would suffice:
-
-```scss
-@import "node_modules/@chrisburnell/bowhead/bowhead";
-```
-
 ## Usage
 
-There are three main moving parts to this set-up:
+There are three main moving parts to this set-up and an optional fourth:
 
-0. `$bowhead-tokens`
-0. `$bowhead-show-fallback`
-0. `$bowhead-generate`
+1. `$bowhead-tokens`
+2. `$bowhead-show-fallback`
+3. `$bowhead-generate`
+4. `$bowhead-property-map`
 
-`$bowhead-tokens` expects an *SCSS* `map` of “types” of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.:
+1. `$bowhead-tokens` expects an *SCSS* `map` of "types" of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.:
 
 ```scss
 $bowhead-tokens: (
@@ -59,7 +54,7 @@ $bowhead-tokens: (
 );
 ```
 
-`$bowhead-show-fallback` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print fallback values for browsers that do not support CSS Variables.
+2. `$bowhead-show-fallback` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print fallback values for browsers that do not support CSS Variables.
 
 **`$bowhead-show-fallback: true;`**
 
@@ -78,24 +73,79 @@ body {
 }
 ```
 
-`$bowhead-generate` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print CSS Variables for you, like so:
+3. `$bowhead-generate` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print CSS Variables for you, like so:
 
 ```css
 :root {
-   --measure-small: 0.5rem;
-   --measure-medium: 1rem;
-   --measure-large: 2rem;
-   --color-brick: #b22222;
-   --color-plankton: #3cb371;
-   --color-desert: #d2b48c;
-   --opacity-alpha: 0.8;
-   --opacity-beta: 0.5;
-   --opacity-gamma: 0.2;
-   --z-index-below: -1;
-   --z-index-root: 0;
-   --z-index-default: 1;
-   --z-index-above: 2;
+    --measure-small: 0.5rem;
+    --measure-medium: 1rem;
+    --measure-large: 2rem;
+    --color-brick: #b22222;
+    --color-plankton: #3cb371;
+    --color-desert: #d2b48c;
+    --opacity-alpha: 0.8;
+    --opacity-beta: 0.5;
+    --opacity-gamma: 0.2;
+    --z-index-below: -1;
+    --z-index-root: 0;
+    --z-index-default: 1;
+    --z-index-above: 2;
 }
+```
+
+4. `$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token "types" (`measure`, `color`, etc.), i.e.
+
+```
+(
+    width: measure,
+    min-width: measure,
+    max-width: measure,
+    height: measure,
+    min-height: measure,
+    max-height: measure,
+    ...
+)
+```
+
+If you wish, you can create new mappings or overwrite existing defaults by defining your own property map, e.g.
+
+```scss
+$bowhead-property-map: (
+    vertical-align: alignments
+);
+```
+
+Where `alignments` would be one of your design token "types", e.g.
+
+```scss
+$bowhead-tokens: (
+    alignments: (
+        default: baseline,
+        alternate: middle
+    ),
+    ...
+);
+```
+
+**Bowhead** will merge your defined map into its own defaults automatically!
+
+--------
+
+Then you’ll have to include **Bowhead** in your SCSS somehow. You could use Webpack or if you’re using *npm* something like below should suffice.
+
+Take note that you need to define any of your **Bowhead** variables (`$bowhead-tokens`, `$bowhead-show-fallback`, `$bowhead-generate`(, `$bowhead-property-map`)) before importing!
+
+```scss
+$bowhead-tokens: (
+    ...
+);
+$bowhead-show-fallback: true;
+$bowhead-generate: true;
+$bowhead-property-map: (
+    ...
+);
+
+@import "node_modules/@chrisburnell/bowhead/bowhead";
 ```
 
 Finally, you can use either the `@v` function or `@v` mixin (or both) however is most comfortable to you:
@@ -127,7 +177,7 @@ body {
 
 ## Learn more
 
-I wrote more about this here: [https://chrisburnell.com/bowhead/](https://chrisburnell.com/bowhead/).
+I wrote more about **Bowhead** here: [https://chrisburnell.com/bowhead/](https://chrisburnell.com/bowhead/).
 
 ## Authors
 
