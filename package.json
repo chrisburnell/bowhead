@@ -19,5 +19,8 @@
   },
   "bugs": {
     "url": "https://github.com/chrisburnell/bowhead/issues"
-  }
+  },
+  "keywords": [
+    "scss"
+  ]
 }
