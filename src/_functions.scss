@@ -25,7 +25,7 @@
         @return $value;
     }
     @else {
-        // if we're passing in a key in the variables Map (e.g. measure)
+        // if we're passing in a key in the tokens Map (e.g. measure)
         @if map-has-key($bowhead-tokens, $property) {
             $map-variables: map-get($bowhead-tokens, $property);
 
@@ -36,7 +36,8 @@
 
             @if $fallback {
                 @return map-get($map-variables, $value);
-            } @else {
+            }
+            @else {
                 @return var(--#{$property}-#{$value});
             }
         }
@@ -69,10 +70,12 @@
 
                 @if $fallback {
                     @return map-get($nest-map, $value);
-                } @else {
+                }
+                @else {
                     @return var(--#{$nest-name}-#{$nest-map-name}-#{$value});
                 }
-            } @else {
+            }
+            @else {
                 // get the map from map name
                 $map: map-get($bowhead-tokens, $map-properties);
 
@@ -83,11 +86,13 @@
 
                 @if $fallback {
                     @return map-get($map, $value);
-                } @else {
+                }
+                @else {
                     @return var(--#{$map-properties}-#{$value});
                 }
             }
-        } @else {
+        }
+        @else {
             // throw a warning if the property does not exist
             @warn "There is no property named `#{$property}` in the variable or property map. The value should be one of `#{map-keys(map-merge($bowhead-tokens, $bowhead-property-map))}`.";
         }

@@ -28,7 +28,8 @@ $bowhead-tokens: (
     )
 ) !default;
 
-$bowhead-property-map: (
+$bowhead-property-map: () !default;
+$bowhead-property-map: map-merge((
     width: measure,
     min-width: measure,
     min-inline-size: measure,
@@ -72,7 +73,6 @@ $bowhead-property-map: (
     left: measure,
     right: measure,
     background-color: color,
-    color: color,
     caret-color: color,
     border-color: color,
     border-block-color: color,
@@ -90,7 +90,6 @@ $bowhead-property-map: (
     stroke: color,
     text-decoration-color: color,
     text-emphasis-color: color,
-    border-style: border-style,
     border-block-style: border-style,
     border-inline-style: border-style,
     border-top-style: border-style,
@@ -102,7 +101,6 @@ $bowhead-property-map: (
     border-left-style: border-style,
     border-inline-end-style: border-style,
     outline-style: border-style,
-    border-width: border-width,
     border-block: border-width,
     border-inline: border-width,
     border-top-width: border-width,
@@ -116,7 +114,6 @@ $bowhead-property-map: (
     outline-width: border-width,
     text-decoration-thickness: border-width,
     text-underline-offset: border-width,
-    border-radius: border-radius,
     border-top-left-radius: border-radius,
     border-start-start-radius: border-radius,
     border-top-right-radius: border-radius,
@@ -124,13 +121,5 @@ $bowhead-property-map: (
     border-bottom-right-radius: border-radius,
     border-end-end-radius: border-radius,
     border-bottom-left-radius: border-radius,
-    border-end-start-radius: border-radius,
-    opacity: opacity,
-    font-family: font-family,
-    font-weight: font-weight,
-    letter-spacing: letter-spacing,
-    line-height: line-height,
-    transition-duration: transition-duration,
-    transition-function: transition-function,
-    z-index: z-index
-) !default;
+    border-end-start-radius: border-radius
+), $bowhead-property-map);
