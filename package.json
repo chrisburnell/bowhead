@@ -9,12 +9,13 @@
   "dependencies": {
     "sass": "^1.26.10"
   },
+  "devDependencies": {},
   "license": "MIT",
   "author": "Chris Burnell",
   "homepage": "https://github.com/chrisburnell/bowhead#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:chrisburnell/bowhead.git"
+    "url": "git+ssh://git@github.com/chrisburnell/bowhead.git"
   },
   "bugs": {
     "url": "https://github.com/chrisburnell/bowhead/issues"

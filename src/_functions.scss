@@ -7,7 +7,7 @@
 ///
 /// @author Chris Burnell
 ///
-/// @param {String} $property - key from $property-map or $variable-map
+/// @param {String} $property - key from $bowhead-property-map or $bowhead-tokens
 /// @param {String} $value [default] - key from inner map
 /// @param {Boolean} $fallback [false] - toggles the computed fallabck value
 ///
@@ -30,8 +30,8 @@
     }
     @else {
         // if we're passing in a key in the variables Map (e.g. measure)
-        @if map-has-key($variable-map, $property) {
-            $map-variables: map-get($variable-map, $property);
+        @if map-has-key($bowhead-tokens, $property) {
+            $map-variables: map-get($bowhead-tokens, $property);
 
             // throw a warning if the value does not exist in the associated Map
             @if not map-has-key($map-variables, $value) {
@@ -45,8 +45,8 @@
             }
         }
         // otherwise we're passing in a value from the properties Map (e.g. fill)
-        @else if map-has-key($property-map, $property) {
-            $map-properties: map-get($property-map, $property);
+        @else if map-has-key($bowhead-property-map, $property) {
+            $map-properties: map-get($bowhead-property-map, $property);
             $nest-name: null;
             $nest-map-name: null;
             $map: null;
@@ -62,7 +62,7 @@
             // if it is a Nested List
             @if $nest-name {
                 // get the map from nested map-name
-                $map: map-get($variable-map, $nest-name);
+                $map: map-get($bowhead-tokens, $nest-name);
                 // get the nested map
                 $nest-map: map-get($map, $nest-map-name);
 
@@ -78,7 +78,7 @@
                 }
             } @else {
                 // get the map from map name
-                $map: map-get($variable-map, $map-properties);
+                $map: map-get($bowhead-tokens, $map-properties);
 
                 // throw a warning if the value does not exist
                 @if not map-has-key($map, $value) {
@@ -93,7 +93,7 @@
             }
         } @else {
             // throw a warning if the property does not exist
-            @warn "There is no property named `#{$property}` in the variable or property map. The value should be one of `#{map-keys(map-merge($variable-map, $property-map))}`.";
+            @warn "There is no property named `#{$property}` in the variable or property map. The value should be one of `#{map-keys(map-merge($bowhead-tokens, $bowhead-property-map))}`.";
         }
     }
 }

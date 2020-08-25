@@ -3,15 +3,7 @@
 ////
 
 /// @type Map
-$variable-map: (
-    color: map-get($bowhead-tokens, "color"),
-    measure: map-get($bowhead-tokens, "measure"),
-    opacity: map-get($bowhead-tokens, "opacity"),
-    z-index: map-get($bowhead-tokens, "z-index")
-) !default;
-
-/// @type Map
-$property-map: (
+$bowhead-property-map: (
     width: measure,
     min-width: measure,
     max-width: measure,

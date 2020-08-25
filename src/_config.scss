@@ -1,5 +1,8 @@
 // Decides whether or not to show a non-CSS Variable fallback value.
-$bowhead-show-fallback: true;
+$bowhead-show-fallback: true !default;
+
+// Decides whether or not to generate CSS Variables for you.
+$bowhead-generate: true !default;
 
 $bowhead-tokens: (
     measure: (
@@ -26,4 +29,4 @@ $bowhead-tokens: (
         default: 1,
         above:   2
     )
-);
+) !default;

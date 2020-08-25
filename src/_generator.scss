@@ -2,10 +2,12 @@
 /// CSS Variables Generator
 ////
 
-:root {
-    @each $key, $map in $bowhead-tokens {
-        @each $property, $value in $map {
-            #{"--" + $key + "-" + $property}: #{$value};
+@if $bowhead-generate {
+    :root {
+        @each $key, $map in $bowhead-tokens {
+            @each $property, $value in $map {
+                #{"--" + $key + "-" + $property}: #{$value};
+            }
         }
     }
 }
