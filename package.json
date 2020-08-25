@@ -1,6 +1,6 @@
 {
   "name": "@chrisburnell/bowhead",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Memorable and maintainable design tokens in SCSS",
   "main": "bowhead.scss",
   "scripts": {
