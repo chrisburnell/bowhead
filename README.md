@@ -139,9 +139,9 @@ $bowhead-tokens: (
 
 --------
 
-Then you’ll have to include **Bowhead** in your SCSS somehow. You could use Webpack or if you’re using *npm* something like below should suffice.
+Then you’ll have to include **Bowhead** in your SCSS somehow. You could use *Webpack* or something like that, or if you’re using *npm*, the below code snippet should suffice.
 
-Take note that you need to define any of your **Bowhead** variables (`$bowhead-tokens`, `$bowhead-show-fallback`, `$bowhead-generate`(, `$bowhead-property-map`)) before importing!
+Take note that you need to define any of your **Bowhead** variables (`$bowhead-tokens`, `$bowhead-show-fallback`, `$bowhead-generate`(, `$bowhead-property-map`)) before importing **Bowhead** into your SCSS!
 
 ```scss
 $bowhead-tokens: (
@@ -156,22 +156,29 @@ $bowhead-property-map: (
 @import "node_modules/@chrisburnell/bowhead/bowhead";
 ```
 
-Finally, you can use either the `@v` function or `@v` mixin (or both) however is most comfortable to you:
+Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or just the CSS Variables it can spit out. However you use it is totally up to you! :)
 
 ```scss
-body {
+.thing {
     @include v(background-color, desert);
     @include v(color, brick);
     border: v(measure, small) solid v(color, plankton);
     padding: v(measure, medium) v(measure, large);
     @include v(z-index, above);
+    opacity: var(--opacity-alpha);
+    // 1. if you just want the raw value, this is not really recommended:
+    text-decoration-color: map-get(map-get($bowhead-tokens, "color"), "brick");
+    // 2. this does the same for you:
+    text-decoration-color: v(color, brick, true);
+    // 3. so does this, although it includes the CSS Variable too:
+    @include v(text-decoration-color, brick, true);
 }
 ```
 
 will generate…
 
 ```css
-body {
+.thing {
     background-color: #d2b48c;
     background-color: var(--color-desert);
     color: #b22222;
@@ -180,6 +187,14 @@ body {
     padding: var(--measure-medium) var(--measure-large);
     z-index: 2;
     z-index: var(--z-index-above);
+    opacity: var(--opacity-alpha);
+    /* 1 */
+    text-decoration-color: #b22222;
+    /* 2 */
+    text-decoration-color: #b22222;
+    /* 3 */
+    text-decoration-color: #b22222;
+    text-decoration-color: var(--color-brick);
 }
 ```
 
