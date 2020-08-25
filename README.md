@@ -21,12 +21,14 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 There are three main moving parts to this set-up and an optional fourth:
 
-1. `$bowhead-tokens`
-2. `$bowhead-show-fallback`
-3. `$bowhead-generate`
-4. `$bowhead-property-map`
+1. [`$bowhead-tokens`](#tokens)
+2. [`$bowhead-show-fallback`](#fallback)
+3. [`$bowhead-generate`](#generate)
+4. [`$bowhead-property-map`](#property-map)
 
-1. `$bowhead-tokens` expects an *SCSS* `map` of "types" of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.:
+### Tokens
+
+`$bowhead-tokens` expects an *SCSS* `map` of "types" of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.:
 
 ```scss
 $bowhead-tokens: (
@@ -54,7 +56,9 @@ $bowhead-tokens: (
 );
 ```
 
-2. `$bowhead-show-fallback` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print fallback values for browsers that do not support CSS Variables.
+### Fallback
+
+`$bowhead-show-fallback` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print fallback values for browsers that do not support CSS Variables.
 
 **`$bowhead-show-fallback: true;`**
 
@@ -73,7 +77,9 @@ body {
 }
 ```
 
-3. `$bowhead-generate` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print CSS Variables for you, like so:
+### Generate
+
+`$bowhead-generate` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print CSS Variables for you, like so:
 
 ```css
 :root {
@@ -93,9 +99,11 @@ body {
 }
 ```
 
-4. `$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token "types" (`measure`, `color`, etc.), i.e.
+### Property Map
 
-```
+`$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token "types" (`measure`, `color`, etc.), i.e.
+
+```scss
 (
     width: measure,
     min-width: measure,
