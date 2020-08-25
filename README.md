@@ -17,6 +17,12 @@ This has a positive effect that ranges from giving the colours in your design sy
 - **With npm:** `npm install @chrisburnell/bowhead`
 - **Direct download:** [https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)
 
+Then you’ll have to include it in your SCSS somehow. You could use Webpack or if you’re using *npm* something like this would suffice:
+
+```scss
+@import "node_modules/@chrisburnell/bowhead/bowhead";
+```
+
 ## Usage
 
 There are three main moving parts to this set-up:
@@ -55,7 +61,7 @@ $bowhead-tokens: (
 
 `$bowhead-show-fallback` is either `true` *(default)* or `false` and determines whether or not **Bowhead** should print fallback values for browsers that do not support CSS Variables.
 
-**`true`:**
+**`$bowhead-show-fallback: true;`**
 
 ```css
 body {
@@ -64,7 +70,7 @@ body {
 }
 ```
 
-**`false`:**
+**`$bowhead-show-fallback: false;`**
 
 ```css
 body {
@@ -103,6 +109,8 @@ body {
     @include v(z-index, above);
 }
 ```
+
+will generate…
 
 ```css
 body {
