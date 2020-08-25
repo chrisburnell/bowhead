@@ -9,7 +9,7 @@
 ///
 /// @param {String} $property - key from $property-map or $variable-map
 /// @param {String} $value [default] - key from inner map
-/// @param {Boolean} $fallback [true] - whether or not to show the SCSS value
+/// @param {Boolean} $fallback [false] - toggles the computed fallabck value
 ///
 /// @example scss
 ///   padding: v(measure, small) v(measure, medium);

@@ -1,5 +1,5 @@
 {
-  "name": "bowhead",
+  "name": "@chrisburnell/bowhead",
   "version": "0.1.0",
   "description": "A small framework on which to build your design tokens in SCSS.",
   "main": "bowhead.scss",
@@ -9,7 +9,7 @@
   "dependencies": {
     "sass": "^1.26.10"
   },
-  "license": "CC BY-NC-SA 4.0",
+  "license": "MIT",
   "author": "Chris Burnell",
   "homepage": "https://github.com/chrisburnell/bowhead#readme",
   "repository": {

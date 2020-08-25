@@ -3,19 +3,9 @@
 ////
 
 :root {
-    @each $key, $value in $measures {
-        #{"--measure-" + $key}: #{$value};
-    }
-
-    @each $key, $value in $opacities {
-        #{"--opacity-" + $key}: #{$value};
-    }
-
-    @each $key, $value in $colors {
-        #{"--color-" + $key}: #{$value};
-    }
-
-    @each $key, $value in $z-indexes {
-        #{"--z-index-" + $key}: #{$value};
+    @each $key, $map in $bowhead-tokens {
+        @each $property, $value in $map {
+            #{"--" + $key + "-" + $property}: #{$value};
+        }
     }
 }

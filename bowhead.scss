@@ -11,6 +11,7 @@
 @import "src/mixins";
 @import "src/generator";
 
-.page {
-    @include v(background-color, desert);
+body {
+    @include v(padding, medium);
+    margin: v(measure, small) v(measure, large, true);
 }

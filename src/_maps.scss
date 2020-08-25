@@ -4,10 +4,10 @@
 
 /// @type Map
 $variable-map: (
-    color: $colors,
-    measure: $measures,
-    opacity: $opacities,
-    z-index: $z-indexes
+    color: map-get($bowhead-tokens, "color"),
+    measure: map-get($bowhead-tokens, "measure"),
+    opacity: map-get($bowhead-tokens, "opacity"),
+    z-index: map-get($bowhead-tokens, "z-index")
 ) !default;
 
 /// @type Map

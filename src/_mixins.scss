@@ -9,7 +9,7 @@
 ///
 /// @param {String} $property - key from $property-map or $variable-map
 /// @param {String} $value [default] - key from inner map
-/// @param {Boolean} $showFallback [false] - if the SCSS value should be shown
+/// @param {Boolean} $show-fallback [false] - if the SCSS value should be shown
 ///
 /// @example scss
 ///   @include v(padding, small);
@@ -21,10 +21,10 @@
 ///
 /// @return Associated property and CSS Variable or SCSS value
 ///
-@mixin v($property, $value: default, $showFallback: $show-fallback) {
+@mixin v($property, $value: default, $show-fallback: $bowhead-show-fallback) {
     // leverage the v() function and output the CSS Variable(s) and optionally
     // the respective SCSS value(s) as well as the property
-    @if $showFallback {
+    @if $show-fallback {
         #{$property}: v($property, $value, true);
     }
     #{$property}: v($property, $value);
