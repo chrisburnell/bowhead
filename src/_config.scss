@@ -1,3 +1,7 @@
+// Decides whether or not use the CSS Variable or raw value when calling the
+// @v function.
+$bowhead-variable-as-default: true !default;
+
 // Decides whether or not to show a fallback value for the CSS Variable.
 $bowhead-show-fallback: true !default;
 

@@ -23,5 +23,5 @@
     @if $show-fallback {
         #{$property}: v($property, $value, true);
     }
-    #{$property}: v($property, $value);
+    #{$property}: v($property, $value, false);
 }
