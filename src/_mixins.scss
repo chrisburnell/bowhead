@@ -9,11 +9,11 @@
 ///
 /// @example scss
 ///   @include v(padding, small);
-///   // padding: var(--measure-small);
+///   // padding: var(--size-small);
 /// @example scss
 ///   @include v(padding, small, true);
 ///   // padding: 0.625rem;
-///   // padding: var(--measure-small);
+///   // padding: var(--size-small);
 ///
 /// @return Associated property and CSS Variable or SCSS value
 ///
