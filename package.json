@@ -1,24 +1,22 @@
 {
   "name": "@chrisburnell/bowhead",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Memorable and maintainable design tokens in SCSS",
-  "main": "bowhead.scss",
-  "scripts": {
-    "test": "npx sass bowhead.scss bowhead.css --no-source-map"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "sass": "^1.49.9"
-  },
-  "license": "MIT",
   "author": "Chris Burnell",
-  "homepage": "https://github.com/chrisburnell/bowhead#readme",
+  "license": "MIT",
+  "homepage": "https://chrisburnell.com/bowhead/",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/chrisburnell/bowhead.git"
   },
   "bugs": {
     "url": "https://github.com/chrisburnell/bowhead/issues"
+  },
+  "devDependencies": {
+    "sass": "^1.49.9"
+  },
+  "scripts": {
+    "test": "npx sass bowhead.scss bowhead.css --no-source-map"
   },
   "keywords": [
     "design tokens",
