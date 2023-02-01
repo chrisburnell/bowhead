@@ -1,3 +1,5 @@
 .github
 .vscode
+.editorconfig
+.prettier
 *.css
