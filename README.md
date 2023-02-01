@@ -177,7 +177,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 <h3 id="default">№ 1. Variable As Default</h3>
 
 ```scss
-+$bowhead-variable-as-default: true;
+$bowhead-variable-as-default: true;
 
 body {
     color: v(color, brick);
