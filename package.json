@@ -1,6 +1,6 @@
 {
   "name": "@chrisburnell/bowhead",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Memorable and maintainable design tokens in SCSS",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "license": "MIT",
